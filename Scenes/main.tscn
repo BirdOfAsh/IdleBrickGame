@@ -1,16 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://b152rhwsqbhnb"]
+[gd_scene load_steps=26 format=3 uid="uid://b152rhwsqbhnb"]
 
 [ext_resource type="PackedScene" uid="uid://cvast3ww3rtfe" path="res://Ball/BasicBall/basic_ball.tscn" id="1_3t50l"]
 [ext_resource type="PackedScene" uid="uid://gri11maih0gc" path="res://Bricks/BrickFormations/Basic_Formation_6.tscn" id="2_aun4w"]
-[ext_resource type="Script" path="res://GameManager/BrickFormationMan/brickFormationMan.gd" id="2_jiuwj"]
-[ext_resource type="Script" path="res://GameManager/MainMan/GameUpdateMan.gd" id="3_802fw"]
-[ext_resource type="Texture2D" uid="uid://u716gwdjfey2" path="res://icon.svg" id="3_gv57q"]
-[ext_resource type="Script" path="res://UI/MainControl.gd" id="3_vcle5"]
+[ext_resource type="Script" uid="uid://bvjxsqgn4gvdl" path="res://GameManager/BrickFormationMan/brickFormationMan.gd" id="2_jiuwj"]
+[ext_resource type="Script" uid="uid://ccke00rqww616" path="res://GameManager/MainMan/GameUpdateMan.gd" id="3_802fw"]
+[ext_resource type="Texture2D" uid="uid://db8bvdnusvxkr" path="res://icon.svg" id="3_gv57q"]
+[ext_resource type="Script" uid="uid://dyyr0tw4yxhns" path="res://UI/MainControl.gd" id="3_vcle5"]
 [ext_resource type="Resource" uid="uid://c5ktt6m1yrjxt" path="res://GameManager/MainMan/GameManager.tres" id="4_f61w4"]
-[ext_resource type="Script" path="res://UI/upgrades.gd" id="4_q33mv"]
+[ext_resource type="Script" uid="uid://cyexmfxwjw2xq" path="res://UI/upgrades.gd" id="4_q33mv"]
 [ext_resource type="Resource" uid="uid://h8d7m1c7ycpr" path="res://Ball/BasicBall/basicBall.tres" id="5_6yf3o"]
-[ext_resource type="Script" path="res://UI/cards.gd" id="8_8icbw"]
-[ext_resource type="Script" path="res://UI/boosts.gd" id="8_dvf2u"]
+[ext_resource type="Script" uid="uid://bqqddgxf056cs" path="res://UI/cards.gd" id="8_8icbw"]
+[ext_resource type="Script" uid="uid://cltyj1svhit14" path="res://UI/boosts.gd" id="8_dvf2u"]
+[ext_resource type="Script" uid="uid://bswqp72dxjfgr" path="res://UI/randomBallUpgrades.gd" id="8_fdnlq"]
+[ext_resource type="Resource" uid="uid://b4ky4ljugjd1f" path="res://Ball/randomBall/randomBall.tres" id="9_jkdf5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tfvwg"]
 font_size = 50
@@ -222,7 +224,6 @@ offset_top = -1.0
 offset_bottom = -0.800049
 
 [node name="Upgrades" type="Panel" parent="FullScreen/ExtraMenu"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -395,24 +396,28 @@ label_settings = SubResource("LabelSettings_yqalx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Template1" type="HBoxContainer" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer"]
+[node name="RandomBall" type="HBoxContainer" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
 alignment = 1
+script = ExtResource("8_fdnlq")
+basicBallR = ExtResource("9_jkdf5")
+gameManR = ExtResource("4_f61w4")
 
-[node name="Icon" type="TextureRect" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1"]
+[node name="Icon" type="TextureRect" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall"]
+modulate = Color(2.06962e-06, 0.775555, 0.339787, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_gv57q")
 
-[node name="plusBall" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1"]
+[node name="plusBall" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1/plusBall"]
+[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/plusBall"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.993
@@ -427,12 +432,12 @@ label_settings = SubResource("LabelSettings_yqalx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Power" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1"]
+[node name="Power" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1/Power"]
+[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/Power"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.993
@@ -447,12 +452,12 @@ label_settings = SubResource("LabelSettings_yqalx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Speed" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1"]
+[node name="Speed" type="Button" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/Template1/Speed"]
+[node name="Label" type="Label" parent="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/Speed"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.993
@@ -600,6 +605,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cards" type="Panel" parent="FullScreen/ExtraMenu"]
+visible = false
 layout_mode = 2
 anchor_top = -1.174
 anchor_right = 1.003
@@ -1063,6 +1069,9 @@ position = Vector2(547, 1960)
 [connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall/plusBall" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall" method="_on_plus_ball_pressed"]
 [connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall/Power" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall" method="_on_power_pressed"]
 [connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall/Speed" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/BasicBall" method="_on_speed_pressed"]
+[connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/plusBall" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall" method="_on_plus_ball_pressed"]
+[connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/Power" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall" method="_on_power_pressed"]
+[connection signal="pressed" from="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall/Speed" to="FullScreen/ExtraMenu/Upgrades/Upgrades/VBoxContainer/RandomBall" method="_on_speed_pressed"]
 [connection signal="pressed" from="FullScreen/ExtraMenu/Cards/CardsAvailable/VBoxContainer/HBoxContainer/BallSpeed" to="FullScreen/ExtraMenu/Cards" method="_on_ball_speed_pressed"]
 [connection signal="pressed" from="FullScreen/ExtraMenu/Cards/CardsAvailable/VBoxContainer/HBoxContainer/BallPower" to="FullScreen/ExtraMenu/Cards" method="_on_ball_power_pressed"]
 [connection signal="pressed" from="FullScreen/ExtraMenu/Cards/CardsAvailable/VBoxContainer/HBoxContainer/BrickCash" to="FullScreen/ExtraMenu/Cards" method="_on_brick_cash_pressed"]

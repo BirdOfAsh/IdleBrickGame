@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjb3f5hmwawy"]
 
-[ext_resource type="Script" path="res://Bricks/BasicBrick/BasicBrick.gd" id="1_8sjvx"]
+[ext_resource type="Script" uid="uid://2orefi248l2y" path="res://Bricks/BasicBrick/BasicBrick.gd" id="1_8sjvx"]
 [ext_resource type="Resource" uid="uid://coyktmwqehv7d" path="res://Bricks/BasicBrick/basicBrick.tres" id="2_7j73s"]
 [ext_resource type="Resource" uid="uid://c5ktt6m1yrjxt" path="res://GameManager/MainMan/GameManager.tres" id="3_7wih7"]
 

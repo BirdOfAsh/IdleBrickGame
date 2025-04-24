@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceq2h0nvytkqb"]
 
-[ext_resource type="Script" path="res://utils/childrenCheck.gd" id="1_3tpoj"]
+[ext_resource type="Script" uid="uid://cx0iamoe5tjsr" path="res://utils/childrenCheck.gd" id="1_3tpoj"]
 [ext_resource type="PackedScene" uid="uid://cr4wkulsnt864" path="res://Bricks/BasicBrick/basic_hexagon.tscn" id="2_xi8ep"]
 
 [node name="BasicFormation" type="Node2D"]

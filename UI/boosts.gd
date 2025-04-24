@@ -25,14 +25,14 @@ func _on_dd_timer_timeout() -> void:
 func _on_double_speed_pressed() -> void:
 	if canPay(1):
 		GameManClass.removeCrystal(1)
-		ball_base.setDoubleSpeed(true)
+		ball_base.setDoubleSpeedB(true)
 		var timer = get_tree().create_timer(30)
 		timer.timeout.connect(_on_ds_timer_timeout)
 	else:
 		print("Cannot Pay for Item")
 
 func _on_ds_timer_timeout() -> void:
-	ball_base.setDoubleSpeed(false)
+	ball_base.setDoubleSpeedB(false)
 
 func _on_double_cash_pressed() -> void:
 	if canPay(1):

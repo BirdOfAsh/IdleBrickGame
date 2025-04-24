@@ -1,8 +1,12 @@
 [gd_resource type="Resource" script_class="Ball" load_steps=2 format=3 uid="uid://h8d7m1c7ycpr"]
 
-[ext_resource type="Script" path="res://Ball/ball_base.gd" id="1_qu8u4"]
+[ext_resource type="Script" uid="uid://75ylq4csiy1t" path="res://Ball/ball_base.gd" id="1_qu8u4"]
 
 [resource]
 script = ExtResource("1_qu8u4")
 damage = 1
 speed = 500
+doubleDamageBoost = false
+doubleSpeedBoost = false
+doubleDamageCard = false
+doubleSpeedCard = false

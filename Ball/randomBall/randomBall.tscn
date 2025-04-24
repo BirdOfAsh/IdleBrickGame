@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://djy1m7dkg13hm"]
+
+[ext_resource type="Script" uid="uid://cdbh34r1j6sfi" path="res://Ball/randomBall/randomBall.gd" id="1_0ohst"]
+[ext_resource type="Resource" uid="uid://b4ky4ljugjd1f" path="res://Ball/randomBall/randomBall.tres" id="2_hnq3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkks1"]
+radius = 25.0
+
+[node name="RandomBall" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_0ohst")
+ball = ExtResource("2_hnq3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bkks1")

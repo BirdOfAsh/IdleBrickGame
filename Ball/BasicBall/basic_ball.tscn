@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvast3ww3rtfe"]
 
-[ext_resource type="Script" path="res://Ball/BasicBall/BasicBall.gd" id="1_dobcs"]
+[ext_resource type="Script" uid="uid://dys5lh0ln8fnb" path="res://Ball/BasicBall/BasicBall.gd" id="1_dobcs"]
 [ext_resource type="Resource" uid="uid://h8d7m1c7ycpr" path="res://Ball/BasicBall/basicBall.tres" id="2_o7dlw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bkks1"]

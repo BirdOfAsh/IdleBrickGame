@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GameManager" load_steps=2 format=3 uid="uid://c5ktt6m1yrjxt"]
 
-[ext_resource type="Script" path="res://GameManager/MainMan/gameManager.gd" id="1_q4res"]
+[ext_resource type="Script" uid="uid://b6ds03st3jx4a" path="res://GameManager/MainMan/gameManager.gd" id="1_q4res"]
 
 [resource]
 script = ExtResource("1_q4res")
@@ -11,3 +11,6 @@ _goldBonus = 1.1
 _normal_brick_chance = 0.95
 _gold_brick_chance = 0.0409
 _crystal_brick_chance = 0.0001
+_moneyIncreaseCards = false
+_stageIncreaseCards = false
+_stageSkipCards = false

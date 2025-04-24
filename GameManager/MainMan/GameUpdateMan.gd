@@ -39,7 +39,7 @@ func moveNextLevel():
 			gameMan.addLevel()
 			# If stage increase is enabled, give the player money
 			if gameMan.getStageIncrease():
-				gameMan.addMoney(round(gameMan.getMoney() / 10))
+				@warning_ignore("integer_division") gameMan.addMoney(round(gameMan.getMoney() / 10))
 			# Mark that the function has been called to prevent further recursion
 			calledOnce = true
 			# Recursively call moveNextLevel() to ensure the level progresses
@@ -52,7 +52,7 @@ func moveNextLevel():
 	gameMan.addLevel()
 	# If stage increase is enabled, give the player money
 	if gameMan.getStageIncrease():
-		gameMan.addMoney(round(gameMan.getMoney() / 10))
+		@warning_ignore("integer_division") gameMan.addMoney(round(gameMan.getMoney() / 10))
 	# Reset positions of all balls
 	for ball in BallMan.get_children():
 		var child = ball

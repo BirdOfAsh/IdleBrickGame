@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gri11maih0gc"]
 
-[ext_resource type="Script" path="res://utils/childrenCheck.gd" id="1_4il4n"]
+[ext_resource type="Script" uid="uid://cx0iamoe5tjsr" path="res://utils/childrenCheck.gd" id="1_4il4n"]
 [ext_resource type="PackedScene" uid="uid://dwn81863bwgte" path="res://Bricks/BrickFormationComponents/Basic_Formation.tscn" id="1_clvlv"]
 
 [node name="BasicFormationSixStack" type="Node2D"]
